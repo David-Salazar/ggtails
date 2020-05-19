@@ -1,14 +1,24 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # ggtails
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
-The goal of ggtails is to make the use of fat tails specific plots as
-easy as possible within the usual `ggplot2` framework.
+The goal of ggtails is to make the use of fat tails specific plots as easy as possible within the usual `ggplot2` framework. 
 
 ## Installation
 
@@ -16,13 +26,11 @@ easy as possible within the usual `ggplot2` framework.
 # install.packages("devtools")
 devtools::install_github("David-Salazar/ggtails")
 ```
-
 ## Example
 
-For example, you can create a zipf plot for different random variables
-in the same way as would use `stat_qq()`
+For example, you can create a zipf plot for different random variables in the same way as would use `stat_qq()`
 
-``` r
+```{r example, message=FALSE, warning=FALSE}
 library(ggtails)
 library(tidyverse)
 
@@ -43,11 +51,9 @@ tibble(sim = 1:10000, lognormal, exponential, pareto) %>%
        y = "Log(Survival(x))")
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
-
 In the same way, we can create a mean excess plot:
 
-``` r
+```{r example2, message=FALSE, warning=FALSE}
 tibble(sim = 1:10000, gaussian, lognormal, exponential, pareto) %>% 
   pivot_longer(-sim, names_to = "random_variable", values_to = "value") %>% 
   ggplot(aes(sample = value)) +
@@ -57,4 +63,3 @@ tibble(sim = 1:10000, gaussian, lognormal, exponential, pareto) %>%
   labs(title = "Mean Excess plot works with facetting!")
 ```
 
-<img src="man/figures/README-example2-1.png" width="100%" />
