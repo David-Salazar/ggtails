@@ -13,7 +13,8 @@
 #'
 #' @return
 #' @export
-#' @import ggplot2
+#'
+#'
 #' @examples
 stat_mean_excess <- function(mapping = NULL, data = NULL, geom = "point",
                              position = "identity", na.rm = FALSE, show.legend = NA,
