@@ -8,7 +8,9 @@
 <!-- badges: end -->
 
 The goal of ggtails is to make the use of fat tails specific plots as
-easy as possible within the usual `ggplot2` framework.
+easy as possible within the usual `ggplot2` framework. To do so, I took
+the computational steps in the great `evir` package and turned them into
+`ggplot2` stats.
 
 ## Installation
 
