@@ -60,3 +60,14 @@ tibble(sim = 1:10000, gaussian, lognormal, exponential, pareto) %>%
 ```
 
 <img src="man/figures/README-example2-1.png" width="100%" />
+
+``` r
+tibble(sim = 1:10000, gaussian, lognormal, exponential, pareto) %>% 
+  pivot_longer(-sim, names_to = "random_variable", values_to = "value") %>% 
+  ggplot(aes(sample = value)) +
+  stat_max_sum_ratio_plot(p = 4) +
+  facet_wrap(~random_variable) +
+  theme_minimal()
+```
+
+<img src="man/figures/README-example3-1.png" width="100%" />
