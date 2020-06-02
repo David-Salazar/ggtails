@@ -12,6 +12,10 @@ easy as possible within the usual `ggplot2` framework. To do so, I took
 the computational steps in the great `evir` package and turned them into
 `ggplot2` stats.
 
+Check [this
+blogpost](https://david-salazar.github.io/2020/05/19/understanding-the-tail-exponent/)
+for an intuitive explanation of these types of plots.
+
 ## Installation
 
 ``` r
@@ -60,6 +64,10 @@ tibble(sim = 1:10000, gaussian, lognormal, exponential, pareto) %>%
 ```
 
 <img src="man/figures/README-example2-1.png" width="100%" />
+
+Finally, we can perform a visual examination of fat-tailedness by
+examining the convergence of moments with the max-to-sum plots. For
+finite moments, the ratio should converge to 0.
 
 ``` r
 tibble(sim = 1:10000, gaussian, lognormal, exponential, pareto) %>% 

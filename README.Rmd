@@ -20,6 +20,8 @@ knitr::opts_chunk$set(
 
 The goal of ggtails is to make the use of fat tails specific plots as easy as possible within the usual `ggplot2` framework. To do so, I took the computational steps in the great `evir` package and turned them into `ggplot2` stats. 
 
+Check [this blogpost](https://david-salazar.github.io/2020/05/19/understanding-the-tail-exponent/) for an intuitive explanation of these types of plots. 
+
 ## Installation
 
 ``` r
@@ -62,6 +64,8 @@ tibble(sim = 1:10000, gaussian, lognormal, exponential, pareto) %>%
   theme_minimal() +
   labs(title = "Mean Excess plot works with facetting!")
 ```
+
+Finally, we can perform a visual examination of fat-tailedness by examining the convergence of moments with the max-to-sum plots. For finite moments, the ratio should converge to 0. 
 
 ```{r example3, message=FALSE, warning=FALSE}
 tibble(sim = 1:10000, gaussian, lognormal, exponential, pareto) %>% 
